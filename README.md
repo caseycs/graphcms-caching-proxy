@@ -15,5 +15,8 @@ Together with purging the cache via webhooks on any modification of the content,
 ## Usage
 
 ```
-docker run --rm -it -p 81:80 -e ENDPOINT=https://api-euwest.graphcms.com/v1/project_id/master graphcms-caching-proxy
+docker run --rm -it \
+  -p 81:80 \
+  -e ENDPOINT=https://api-euwest.graphcms.com/v1/project_id/master \
+  graphcms-caching-proxy
 ```
