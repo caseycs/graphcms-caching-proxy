@@ -15,9 +15,15 @@ Together with purging the cache via webhooks on any modification of the content,
 
 ## Usage
 
+Running 
+
 ```
 docker run --rm -it \
   -p 81:80 \
   -e ENDPOINT=https://api-euwest.graphcms.com/v1/project_id/master \
   graphcms-caching-proxy
 ```
+
+To make queries you need to replace `https://api-euwest.graphcms.com/v1/project_id/master` with `http://docker-host:81` inside your application.
+
+Cache is valid for a very long time, so make sure you have a webhook to `http://docker-host:81/purge` on every content modification to purge it.
