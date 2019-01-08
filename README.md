@@ -6,7 +6,7 @@ GraphCMS caching proxy using nginx
 
 [GraphCMS](https://graphcms.com) is a good and affordable platform, however there are few thing to know about it:
 
-* it's very slow, up to 500ms
+* it's very slow, up to 700ms for simple queries
 * it fails very often, so be prepared for having random downtime for 30 minutes or sometimes an hour, while using it on your homepage
 
 My solution is to run caching proxy, which will be an endpoint for production application and
