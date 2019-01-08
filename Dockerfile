@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache nginx nginx-mod-http-set-misc nginx-mod-http-lua lua5.1-md5 \
+RUN apk add --no-cache nginx nginx-mod-http-lua lua5.1-md5 \
   # forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
