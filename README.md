@@ -25,8 +25,8 @@ way less frequently.
 Pass your API endpoint via `ENDPOINT` environment variable and adjust
 endpoint url inside your application.
 
-To purge the cache you need to request `/purge`, good idea is to do it on every content modification,
-for example via webhook.
+To purge the cache you can to request `/purge`, for example you can do it
+on every content modification via [GraphCMS webhook](https://docs.graphcms.com/developers/concepts#webhooks).
 
 ```
 docker run --rm -it \
