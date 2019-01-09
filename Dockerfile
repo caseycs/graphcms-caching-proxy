@@ -17,4 +17,6 @@ EXPOSE 80
 
 STOPSIGNAL SIGTERM
 
+ENV PROXY_CACHE_VALID 1h
+
 CMD ["/etc/nginx/entrypoint.sh"]

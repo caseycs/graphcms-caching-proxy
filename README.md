@@ -15,7 +15,11 @@ Together with purging the cache via webhooks on any modification of the content,
 
 ## Usage
 
-Running 
+Pass your API endpoint via `ENDPOINT` environment variable and adjust
+endpoint url inside your application.
+
+To purge the cache you need to request `/purge`, good idea is to do it on every content modification,
+for example via webhook.
 
 ```
 docker run --rm -it \
@@ -25,6 +29,3 @@ docker run --rm -it \
   graphcms-caching-proxy
 ```
 
-To make queries you need to replace `https://api-euwest.graphcms.com/v1/project_id/master` with `http://docker-host:81` inside your application.
-
-Cache is valid for a very long time, so make sure you have a webhook to `http://docker-host:81/purge` on every content modification to purge it.
