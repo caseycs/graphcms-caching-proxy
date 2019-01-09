@@ -30,6 +30,6 @@ docker run --rm -it \
   -p 81:80 \
   -e ENDPOINT=https://api-euwest.graphcms.com/v1/project_id/master \
   -e PROXY_CACHE_VALID=48h \
-  graphcms-caching-proxy
+  caseycs/graphcms-caching-proxy
 ```
 
