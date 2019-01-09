@@ -13,7 +13,7 @@ few thing to know about it:
 So be prepared that your application will render pages way slower and also for
 random downtime for 30 minutes or sometimes an hour, while using it on your homepage.
 
-My solution is to run caching proxy, which will be an endpoint for production application and
+My solution is to run caching proxy using nginx+lua, which will be an endpoint for production application and
 will provide speed and stability. Together with purging the cache via webhooks on
 any content modification, it should help a lot.
 
@@ -36,3 +36,12 @@ docker run --rm -it \
   caseycs/graphcms-caching-proxy
 ```
 
+## Limitations
+
+Design to work only for public read-only access, `OPTIONS` response is hardcoded in nginx. 
+
+## Production usage tips
+
+For requests from the browser and also for the webhooks you need https/ssl offloading, so [Traefik](https://traefik.io/) or [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) are your friends.
+
+Good to use internal http endpoint while server-side rendering and https version for public access.
