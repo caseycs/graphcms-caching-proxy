@@ -14,8 +14,11 @@ So be prepared that your application will render pages way slower and also for
 random downtime for 30 minutes or sometimes an hour, while using it on your homepage.
 
 My solution is to run caching proxy, which will be an endpoint for production application and
-will provide speed and stability. Together with purging the cache via webhooks on any modification
-of the content, that should help a lot.
+will provide speed and stability. Together with purging the cache via webhooks on
+any content modification, it should help a lot.
+
+Of course, when cache is empty and graphcms is down - you have a problem again, but that's happening
+way less frequently. 
 
 ## Usage
 
