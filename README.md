@@ -44,4 +44,4 @@ Design to work only for public read-only access, `OPTIONS` response is hardcoded
 
 For requests from the browser and also for the webhooks you need https/ssl offloading, so [Traefik](https://traefik.io/) or [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) are your friends.
 
-Good to use internal http endpoint while server-side rendering and https version for public access.
+Good to use two separate endpoints: one raw/http for server-side rendering, another with https for public access.
