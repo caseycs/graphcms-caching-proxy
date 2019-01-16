@@ -38,7 +38,9 @@ docker run --rm -it \
 
 ## Limitations
 
-Design to work only for public read-only access, `OPTIONS` response is hardcoded in nginx. 
+Designed to work only for public read-only endpoints.
+
+`OPTIONS` response is hardcoded in nginx.
 
 ## Production usage tips
 
