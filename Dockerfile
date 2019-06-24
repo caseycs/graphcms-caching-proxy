@@ -9,9 +9,11 @@ RUN apk add --no-cache nginx nginx-mod-http-lua lua5.1-md5 \
 RUN mkdir -p /run/nginx
 
 # Add our nginx conf
-COPY . /etc/nginx
+COPY nginx.conf purge.lua /etc/nginx/
+COPY conf.d/default.conf /etc/nginx/conf.d
+COPY entrypoint.sh /root
 
-RUN chmod +x /etc/nginx/entrypoint.sh
+RUN chmod +x /root/entrypoint.sh
 
 EXPOSE 80
 
@@ -19,4 +21,4 @@ STOPSIGNAL SIGTERM
 
 ENV PROXY_CACHE_VALID 1h
 
-CMD ["/etc/nginx/entrypoint.sh"]
+CMD ["/root/entrypoint.sh"]
